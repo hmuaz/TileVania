@@ -7,6 +7,8 @@ public class Player : MonoBehaviour
     public Rigidbody2D rb;
     public float speed = 5f;
     public float jumpSpeed = 5f;
+    public bool isJump = false;
+
 
 
 
@@ -21,7 +23,7 @@ public class Player : MonoBehaviour
     void Update()
     {
         Ziplama();
-        
+
 
         movement = Input.GetAxis("Horizontal");
     }
@@ -44,10 +46,23 @@ public class Player : MonoBehaviour
 
     private void Ziplama()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (!isJump)
         {
-            rb.AddForce(Vector2.up * jumpSpeed, ForceMode2D.Impulse);
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                rb.AddForce(Vector2.up * jumpSpeed, ForceMode2D.Impulse);
+                isJump = true;
+            }
+        }
+        
+    }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag == "Ground")
+        {
+            isJump = false;
         }
     }
+
 }
