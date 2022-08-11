@@ -8,6 +8,7 @@ public class Player : MonoBehaviour
     public float speed = 5f;
     public float jumpSpeed = 5f;
     public bool isJump = false;
+    public GameManager gm;
 
 
 
@@ -51,7 +52,6 @@ public class Player : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 rb.AddForce(Vector2.up * jumpSpeed, ForceMode2D.Impulse);
-                isJump = true;
             }
         }
         
@@ -63,6 +63,24 @@ public class Player : MonoBehaviour
         {
             isJump = false;
         }
+
+        
+        
     }
 
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Ground")
+        {
+            isJump = true;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D trigger)
+    {
+        if (trigger.gameObject.tag == "StartGame")
+        {
+            gm.Nextlevel();
+        }
+    }
 }
