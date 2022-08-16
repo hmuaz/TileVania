@@ -8,7 +8,7 @@ public class Player : MonoBehaviour
     public float speed = 5f;
     public float jumpSpeed = 5f;
     public bool isJump = false;
-    public GameManager gm;
+    public LevelManager lm;
 
 
 
@@ -80,7 +80,15 @@ public class Player : MonoBehaviour
     {
         if (trigger.gameObject.tag == "StartGame")
         {
-            gm.Nextlevel();
+            lm.Nextlevel();
+        }
+        if (trigger.gameObject.tag == "Su")
+        {
+            rb.freezeRotation = false;
+            for (int i = 40; i <= 0; i--)
+            {
+                rb.gravityScale = i;
+            }
         }
     }
 }
