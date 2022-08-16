@@ -5,21 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
-    static LevelManager lm;
 
 
     private void Start()
     {
-        if (lm != null)
-        {
-            Destroy(gameObject);
-        }
-        else
-        {
-            lm = this;
-            GameObject.DontDestroyOnLoad(gameObject);
-
-        }
+        
     }
     public void Nextlevel()
     {

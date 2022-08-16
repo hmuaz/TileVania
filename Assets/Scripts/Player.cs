@@ -9,11 +9,14 @@ public class Player : MonoBehaviour
     public float jumpSpeed = 5f;
     public bool isJump = false;
     public LevelManager lm;
+    public InputD id;
+    [SerializeField] Movement mv;
+    public Animator anim;
 
 
 
 
-    float movement;
+    float movementX;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,29 +26,34 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Ziplama();
+        Jump();
+        if(movementX < 0)
+        {
+            transform.localScale = new Vector3(-1, 1, 1);
+        }
+        else if(movementX > 0)
+        {
+            transform.localScale = new Vector3(1, 1, 1);
+        }
 
-
-        movement = Input.GetAxis("Horizontal");
+        movementX = Input.GetAxisRaw("Horizontal");
+        anim.SetBool("isMoving", id.playerMoving);
     }
 
     private void FixedUpdate()
     {
-        Hareket();
+        if (id.playerMoving)
+        {
+            mv.Move(movementX, speed);
+        }
 
     }
 
-    private void Hareket()
-    {
-        rb.velocity = new Vector2(movement * speed * Time.deltaTime, rb.velocity.y);
+    
 
 
 
-    }
-
-
-
-    private void Ziplama()
+    private void Jump()
     {
         if (!isJump)
         {

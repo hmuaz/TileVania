@@ -13,9 +13,11 @@ GameObject:
   - component: {fileID: 5138336297224459401}
   - component: {fileID: 5138336297224459405}
   - component: {fileID: 5138336297224459404}
+  - component: {fileID: 2022172497}
+  - component: {fileID: 2022172496}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -75,7 +77,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 3
   m_Sprite: {fileID: -204903747, guid: 41bbf02d24885b140844037dcfbcdfcf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -124,7 +126,9 @@ MonoBehaviour:
   speed: 800
   jumpSpeed: 60
   isJump: 0
-  gm: {fileID: 0}
+  lm: {fileID: 0}
+  id: {fileID: 0}
+  mv: {fileID: 2022172496}
 --- !u!70 &5138336297224459404
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -141,3 +145,35 @@ CapsuleCollider2D:
   m_Offset: {x: 0.008739516, y: 0}
   m_Size: {x: 0.49523106, y: 0.875}
   m_Direction: 0
+--- !u!95 &2022172497
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5138336297224459402}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6033c00135e556a40acc6b24cd4324c7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &2022172496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5138336297224459402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffe65f6f2aa924e4fae5a0c14d2da1b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
