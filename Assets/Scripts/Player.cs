@@ -6,16 +6,18 @@ public class Player : MonoBehaviour
 {
     public Rigidbody2D rb;
     public float speed = 5f;
+    public float climbingSpeed = 10f;
     public float jumpSpeed = 5f;
     public bool isJump = false;
     public LevelManager lm;
     public InputD id;
     [SerializeField] Movement mv;
+    public Ladder ladder;
     public Animator anim;
 
 
 
-
+    public float movementY;
     float movementX;
     // Start is called before the first frame update
     void Start()
@@ -26,6 +28,9 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
+        
+
         Jump();
         if(movementX < 0)
         {
@@ -37,6 +42,10 @@ public class Player : MonoBehaviour
         }
 
         movementX = Input.GetAxisRaw("Horizontal");
+        movementY = Input.GetAxisRaw("Vertical");
+
+
+        anim.SetBool("isClimbing", id.climbingA);
         anim.SetBool("isMoving", id.playerMoving);
     }
 
@@ -47,9 +56,30 @@ public class Player : MonoBehaviour
             mv.Move(movementX, speed);
         }
 
+        if (id.startClimbing)
+        {
+            if (movementY > 0)
+            {
+                ClimbingUp();
+            }
+            else if (movementY < 0)
+            {
+                ClimbingDown();
+            }
+        }
     }
 
-    
+    private void ClimbingUp()
+    {
+        rb.velocity = new Vector2(rb.velocity.x, movementY * speed * 2 * Time.deltaTime);
+    }
+
+    private void ClimbingDown()
+    {
+        rb.velocity = new Vector2(rb.velocity.x, movementY * speed * 2 * Time.deltaTime);
+
+
+    }
 
 
 
