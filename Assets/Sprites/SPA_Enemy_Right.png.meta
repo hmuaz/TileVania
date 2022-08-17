@@ -119,19 +119,19 @@ TextureImporter:
       name: SPA_Enemy_Right_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 15
         y: 0
-        width: 40
+        width: 24
         height: 40
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 741ee110a9ac0a94487c716c5a9a3a42
-      internalID: -909613104
+      spriteID: 4f28a32e6b7da7443b670c6acda336d5
+      internalID: 179765785
       vertices: []
       indices: 
       edges: []
@@ -140,19 +140,19 @@ TextureImporter:
       name: SPA_Enemy_Right_1
       rect:
         serializedVersion: 2
-        x: 40
+        x: 53
         y: 0
-        width: 40
+        width: 24
         height: 40
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3620a8cbf3374544195087efebf6827d
-      internalID: 1152073739
+      spriteID: dc08e176f80c7ef43bb2f3c8d9eb3351
+      internalID: 1000153572
       vertices: []
       indices: 
       edges: []
@@ -161,19 +161,19 @@ TextureImporter:
       name: SPA_Enemy_Right_2
       rect:
         serializedVersion: 2
-        x: 80
+        x: 91
         y: 0
-        width: 40
+        width: 24
         height: 40
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e6312ea9dabbfb6429e54f1f00b224b7
-      internalID: 1291578761
+      spriteID: a19e18dec4963534da4f47801a3d2bcd
+      internalID: 1562739470
       vertices: []
       indices: 
       edges: []
@@ -182,19 +182,19 @@ TextureImporter:
       name: SPA_Enemy_Right_3
       rect:
         serializedVersion: 2
-        x: 120
+        x: 129
         y: 0
-        width: 40
+        width: 26
         height: 40
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dc64b90c578c70b489114f464be9ff6f
-      internalID: -578111920
+      spriteID: a4f8d6af12166304296cf86396fefbd2
+      internalID: -138146184
       vertices: []
       indices: 
       edges: []
@@ -203,19 +203,19 @@ TextureImporter:
       name: SPA_Enemy_Right_4
       rect:
         serializedVersion: 2
-        x: 160
+        x: 167
         y: 0
-        width: 40
+        width: 26
         height: 40
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eabc41807d3470141b082c85b739156d
-      internalID: -2132086153
+      spriteID: f44a12c6315c6ab46b948fb305276d6e
+      internalID: -947376642
       vertices: []
       indices: 
       edges: []
@@ -224,19 +224,19 @@ TextureImporter:
       name: SPA_Enemy_Right_5
       rect:
         serializedVersion: 2
-        x: 200
+        x: 203
         y: 0
-        width: 40
+        width: 24
         height: 40
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 675c036fed422eb43a65562dce8c9627
-      internalID: 1225269835
+      spriteID: b75c36683c264ba409a96f60a4fe450f
+      internalID: 1397306214
       vertices: []
       indices: 
       edges: []
@@ -252,12 +252,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      SPA_Enemy_Right_5: 1225269835
-      SPA_Enemy_Right_0: -909613104
-      SPA_Enemy_Right_4: -2132086153
-      SPA_Enemy_Right_3: -578111920
-      SPA_Enemy_Right_2: 1291578761
-      SPA_Enemy_Right_1: 1152073739
+      SPA_Enemy_Right_5: 1397306214
+      SPA_Enemy_Right_0: 179765785
+      SPA_Enemy_Right_4: -947376642
+      SPA_Enemy_Right_3: -138146184
+      SPA_Enemy_Right_2: 1562739470
+      SPA_Enemy_Right_1: 1000153572
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

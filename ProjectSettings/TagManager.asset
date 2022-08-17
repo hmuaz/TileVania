@@ -8,6 +8,8 @@ TagManager:
   - StartGame
   - Yandin
   - Ladder
+  - EnemyYon
+  - Enemy
   layers:
   - Default
   - TransparentFX

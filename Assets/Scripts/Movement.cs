@@ -11,6 +11,6 @@ public class Movement : MonoBehaviour
     }
     public void Move(float movement, float speed)
     {
-        rb.velocity = new Vector2(movement * speed * Time.deltaTime, rb.velocity.y);
+        rb.velocity = new Vector2(movement * speed * Time.fixedDeltaTime, rb.velocity.y);
     }
 }
