@@ -18,7 +18,7 @@ public class Player : MonoBehaviour
 
 
     public float movementY;
-    float movementX;
+    public float movementX;
     // Start is called before the first frame update
     void Start()
     {
