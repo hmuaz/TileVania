@@ -275,6 +275,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &572821008 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 2022172497, guid: e7573dd6b5fc2fb4bb17f7031091adf3, type: 3}
+  m_PrefabInstance: {fileID: 5138336296642269467}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &598851801
 GameObject:
   m_ObjectHideFlags: 0
@@ -3044,6 +3049,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1463111452}
   - component: {fileID: 1463111453}
+  - component: {fileID: 1463111455}
+  - component: {fileID: 1463111454}
   m_Layer: 0
   m_Name: LevelManager
   m_TagString: Untagged
@@ -3078,6 +3085,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 424b020f359c6a4469d8180cc81fe568, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1463111454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1463111451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffe65f6f2aa924e4fae5a0c14d2da1b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1463111455
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1463111451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b772b8ad74c0ac418223fab82166876, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerMoving: 0
+  startClimbing: 0
+  climbingA: 0
+  ladder: {fileID: 0}
 --- !u!1 &1577131555
 GameObject:
   m_ObjectHideFlags: 0
@@ -7858,9 +7893,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1463111453}
     - target: {fileID: 5138336297224459405, guid: e7573dd6b5fc2fb4bb17f7031091adf3, type: 3}
+      propertyPath: id
+      value: 
+      objectReference: {fileID: 1463111455}
+    - target: {fileID: 5138336297224459405, guid: e7573dd6b5fc2fb4bb17f7031091adf3, type: 3}
       propertyPath: lm
       value: 
       objectReference: {fileID: 1463111453}
+    - target: {fileID: 5138336297224459405, guid: e7573dd6b5fc2fb4bb17f7031091adf3, type: 3}
+      propertyPath: anim
+      value: 
+      objectReference: {fileID: 572821008}
     - target: {fileID: 5138336297224459406, guid: e7573dd6b5fc2fb4bb17f7031091adf3, type: 3}
       propertyPath: m_RootOrder
       value: 2
