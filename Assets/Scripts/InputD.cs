@@ -10,7 +10,7 @@ public class InputD : MonoBehaviour
     public Ladder ladder;
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame

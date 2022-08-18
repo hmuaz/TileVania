@@ -6,7 +6,10 @@ public class Coin : MonoBehaviour
 {
     public UI ui;
 
-    
+    private void Awake()
+    {
+        ui = GameObject.Find("Skor").GetComponent<UI>();
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

@@ -22,6 +22,8 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        lm = GameObject.Find("LevelManager").GetComponent<LevelManager>();
+        id = GameObject.Find("LevelManager").GetComponent<InputD>();
 
     }
 

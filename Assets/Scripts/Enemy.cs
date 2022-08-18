@@ -19,6 +19,7 @@ public class Enemy : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
+            Debug.Log("temas");
             gm.GameOver();
         }
 
