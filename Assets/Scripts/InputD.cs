@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class InputD : MonoBehaviour
 {
+    public bool playerRolling = false;
     public bool playerMoving = false;
     public bool startClimbing = false;
     public bool climbingA = false;
@@ -16,14 +17,22 @@ public class InputD : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetAxisRaw("Horizontal") != 0)
+        if(Input.GetAxisRaw("Horizontal") != 0 & playerRolling == false)
         {
+
             playerMoving = true;
         }
         else
         {
             playerMoving = false;
         }
+
+        if (Input.GetKeyDown(KeyCode.LeftControl))
+        {
+            playerRolling = true;
+            StartCoroutine(RollingFalse());
+        }
+        
 
         if (ladder.tirmanma)
         {
@@ -38,5 +47,11 @@ public class InputD : MonoBehaviour
             }
         }
         
+        IEnumerator RollingFalse()
+        {
+            yield return new WaitForSeconds(0.3f);
+            playerRolling = false;
+            
+        }
     }
 }

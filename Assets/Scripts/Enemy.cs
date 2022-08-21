@@ -8,16 +8,18 @@ public class Enemy : MonoBehaviour
     public float enemySpeed = 70f;
     Movement movementScript;
     public GameManager gm;
+    InputD id;
 
 
 
     private void Awake()
     {
+        id = GameObject.Find("LevelManager").GetComponent<InputD>();
         movementScript = GetComponent<Movement>();
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player" & id.playerRolling == false)
         {
             Debug.Log("temas");
             gm.GameOver();

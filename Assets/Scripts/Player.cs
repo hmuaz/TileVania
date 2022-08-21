@@ -14,22 +14,24 @@ public class Player : MonoBehaviour
     [SerializeField] Movement mv;
     public Ladder ladder;
     public Animator anim;
+    public Rolling rolling;
 
 
-
+    float direction;
     public float movementY;
     public float movementX;
-    // Start is called before the first frame update
     void Start()
     {
         lm = GameObject.Find("LevelManager").GetComponent<LevelManager>();
         id = GameObject.Find("LevelManager").GetComponent<InputD>();
+        rolling = GetComponent<Rolling>();
 
     }
 
-    // Update is called once per frame
     void Update()
     {
+        direction = transform.localScale.x;
+
         
         
 
@@ -46,13 +48,24 @@ public class Player : MonoBehaviour
         movementX = Input.GetAxisRaw("Horizontal");
         movementY = Input.GetAxisRaw("Vertical");
 
-
+        anim.SetBool("isRolling", id.playerRolling);
         anim.SetBool("isClimbing", id.climbingA);
         anim.SetBool("isMoving", id.playerMoving);
     }
 
     private void FixedUpdate()
     {
+        if (id.playerRolling)
+        {
+            mv.enabled = false;
+            Debug.Log("id.playerRolling");
+            rolling.Roll(direction);
+        }
+        else
+        {
+            mv.enabled = true;
+        }
+
         if (id.playerMoving)
         {
             mv.Move(movementX, speed);
