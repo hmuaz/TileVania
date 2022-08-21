@@ -8,7 +8,6 @@ public class Player : MonoBehaviour
     public float speed = 5f;
     public float climbingSpeed = 10f;
     public float jumpSpeed = 5f;
-    public bool isJump = false;
     public LevelManager lm;
     public InputD id;
     [SerializeField] Movement mv;
@@ -100,7 +99,7 @@ public class Player : MonoBehaviour
 
     private void Jump()
     {
-        if (!isJump)
+        if (!id.isJump)
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
@@ -114,7 +113,7 @@ public class Player : MonoBehaviour
     {
         if(collision.gameObject.tag == "Ground")
         {
-            isJump = false;
+            id.isJump = false;
         }
 
         
@@ -125,7 +124,7 @@ public class Player : MonoBehaviour
     {
         if (collision.gameObject.tag == "Ground")
         {
-            isJump = true;
+            id.isJump = true;
         }
     }
 

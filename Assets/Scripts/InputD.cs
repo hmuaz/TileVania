@@ -8,6 +8,7 @@ public class InputD : MonoBehaviour
     public bool playerMoving = false;
     public bool startClimbing = false;
     public bool climbingA = false;
+    public bool isJump = false;
     public Ladder ladder;
     void Start()
     {
@@ -27,7 +28,7 @@ public class InputD : MonoBehaviour
             playerMoving = false;
         }
 
-        if (Input.GetKeyDown(KeyCode.LeftControl))
+        if (Input.GetKeyDown(KeyCode.LeftControl) & isJump == false)
         {
             playerRolling = true;
             StartCoroutine(RollingFalse());
