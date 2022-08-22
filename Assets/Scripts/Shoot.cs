@@ -28,12 +28,9 @@ public class Shoot : MonoBehaviour
         if (!isShoot)
         {
             isShoot = true;
-            GameObject arrow = Instantiate(arrowPrefab, playerVector, Quaternion.identity);
-            arrow.transform.localScale = new Vector3(direction, 1, 1);
-            Rigidbody2D rb = arrow.AddComponent<Rigidbody2D>();
-            rb.freezeRotation = true;
-            rb.gravityScale = 0;
-            rb.velocity = new Vector2(direction, 0) * Time.fixedDeltaTime * arrowSpeed;
+            
+            StartCoroutine(ShootStartTime(direction, playerVector));
+
 
             StartCoroutine(ShootRes());
         }
@@ -50,6 +47,19 @@ public class Shoot : MonoBehaviour
     }
 
     
+
+    IEnumerator ShootStartTime(float direction, Vector3 playerVector)
+    {
+        yield return new WaitForSeconds(0.3f);
+        GameObject arrow = Instantiate(arrowPrefab, playerVector, Quaternion.identity);
+        arrow.transform.localScale = new Vector3(direction, 1, 1);
+        Rigidbody2D rb = arrow.AddComponent<Rigidbody2D>();
+        rb.freezeRotation = true;
+        rb.gravityScale = 0;
+        rb.velocity = new Vector2(direction, 0) * Time.fixedDeltaTime * arrowSpeed;
+    }
+
+
 
 
 }
