@@ -29,13 +29,14 @@ public class Player : MonoBehaviour
 
     }
 
+
     void Update()
     {
         direction = transform.localScale.x;
         float arrowMovePosition = 0.5f * direction;
         if (Input.GetMouseButtonDown(0))
         {
-            shoot.ShootArrow(direction, new Vector3(transform.position.x + arrowMovePosition, transform.position.y, transform.position.z));
+            shoot.ShootArrow(direction, playerPosition(transform.position, arrowMovePosition));
         }
 
 
@@ -152,5 +153,11 @@ public class Player : MonoBehaviour
                 rb.gravityScale = i;
             }
         }
+    }
+
+    Vector3 playerPosition(Vector3 playerTransform, float arrowMovePosition)
+    {
+        Vector3 position = new Vector3(playerTransform.x + arrowMovePosition, playerTransform.y, playerTransform.z);
+        return position;
     }
 }

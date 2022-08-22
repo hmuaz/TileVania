@@ -6,7 +6,6 @@ public class Shoot : MonoBehaviour
 {
     public float arrowSpeed = 2000f;
     public GameObject arrowPrefab;
-    public GameObject arrow;
     public Arrow arrowClass;
     public bool isShoot = false;
     Vector2 extraArrowVector;
@@ -29,7 +28,7 @@ public class Shoot : MonoBehaviour
         if (!isShoot)
         {
             isShoot = true;
-            arrow = Instantiate(arrowPrefab, playerVector, Quaternion.identity);
+            GameObject arrow = Instantiate(arrowPrefab, playerVector, Quaternion.identity);
             arrow.transform.localScale = new Vector3(direction, 1, 1);
             Rigidbody2D rb = arrow.AddComponent<Rigidbody2D>();
             rb.freezeRotation = true;
