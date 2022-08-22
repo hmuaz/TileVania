@@ -10,26 +10,29 @@ public class Shoot : MonoBehaviour
     public bool isShoot = false;
     Vector2 extraArrowVector;
     InputD id;
+    public Player player;
+    Vector3 playerTransformPosition;
 
 
     private void Start()
     {
+        player = GetComponent<Player>();
         arrowClass = GetComponentInChildren<Arrow>();
         id = GameObject.Find("LevelManager").GetComponent<InputD>();
     }
 
     private void Update()
     {
-
+        playerTransformPosition = player.transform.position;
     }
 
-    public virtual void ShootArrow(float direction, Vector3 playerVector)
+    public virtual void ShootArrow(float direction)
     {
         if (!isShoot)
         {
             isShoot = true;
             
-            StartCoroutine(ShootStartTime(direction, playerVector));
+            StartCoroutine(ShootStartTime(direction));
 
 
             StartCoroutine(ShootRes());
@@ -48,11 +51,11 @@ public class Shoot : MonoBehaviour
 
     
 
-    IEnumerator ShootStartTime(float direction, Vector3 playerVector)
+    IEnumerator ShootStartTime(float direction)
     {
         yield return new WaitForSeconds(0.3f);
-        GameObject arrow = Instantiate(arrowPrefab, playerVector, Quaternion.identity);
-        arrow.transform.localScale = new Vector3(direction, 1, 1);
+        GameObject arrow = Instantiate(arrowPrefab, playerTransformPosition, Quaternion.identity);
+        arrow.transform.localScale = new Vector3(direction / 2, 0.5f, 0.5f);
         Rigidbody2D rb = arrow.AddComponent<Rigidbody2D>();
         rb.freezeRotation = true;
         rb.gravityScale = 0;

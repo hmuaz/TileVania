@@ -29,14 +29,14 @@ public class Player : MonoBehaviour
 
     }
 
-
+    
     void Update()
     {
         direction = transform.localScale.x;
         float arrowMovePosition = 0.5f * direction;
         if (Input.GetMouseButtonDown(0))
         {
-            shoot.ShootArrow(direction, playerPosition(transform.position, arrowMovePosition));
+            shoot.ShootArrow(direction);
         }
 
 

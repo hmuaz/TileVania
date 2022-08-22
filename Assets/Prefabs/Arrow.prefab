@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 4355603069909788977}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -124,9 +124,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bc95b7c754bc1541885862db61e6e52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  arrowPrefab: {fileID: 0}
-  arrowSpeed: 2000
   arrowsRb: {fileID: 0}
-  arrowPrefab: {fileID: 0}
-  arrow: {fileID: 0}
-  arrowSpeed: 2000
+  shoot: {fileID: 0}
