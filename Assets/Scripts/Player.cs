@@ -14,6 +14,7 @@ public class Player : MonoBehaviour
     public Ladder ladder;
     public Animator anim;
     public Rolling rolling;
+    public Shoot shoot;
 
 
     float direction;
@@ -24,15 +25,20 @@ public class Player : MonoBehaviour
         lm = GameObject.Find("LevelManager").GetComponent<LevelManager>();
         id = GameObject.Find("LevelManager").GetComponent<InputD>();
         rolling = GetComponent<Rolling>();
+        shoot = GetComponent<Shoot>();
 
     }
 
     void Update()
     {
         direction = transform.localScale.x;
+        float arrowMovePosition = 0.5f * direction;
+        if (Input.GetMouseButtonDown(0))
+        {
+            shoot.ShootArrow(direction, new Vector3(transform.position.x + arrowMovePosition, transform.position.y, transform.position.z));
+        }
 
-        
-        
+
 
         Jump();
         if(movementX < 0)
@@ -47,6 +53,7 @@ public class Player : MonoBehaviour
         movementX = Input.GetAxisRaw("Horizontal");
         movementY = Input.GetAxisRaw("Vertical");
 
+        anim.SetBool("isShoot", shoot.isShoot);
         anim.SetBool("isRolling", id.playerRolling);
         anim.SetBool("isClimbing", id.climbingA);
         anim.SetBool("isMoving", id.playerMoving);
@@ -54,6 +61,9 @@ public class Player : MonoBehaviour
 
     private void FixedUpdate()
     {
+        
+
+
         if (id.playerRolling)
         {
             mv.enabled = false;

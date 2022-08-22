@@ -18,7 +18,9 @@ public class InputD : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetAxisRaw("Horizontal") != 0 & playerRolling == false)
+        
+
+        if (Input.GetAxisRaw("Horizontal") != 0 & playerRolling == false)
         {
 
             playerMoving = true;

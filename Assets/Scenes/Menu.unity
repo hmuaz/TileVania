@@ -3108,6 +3108,7 @@ MonoBehaviour:
   playerMoving: 0
   startClimbing: 0
   climbingA: 0
+  isJump: 0
   ladder: {fileID: 0}
 --- !u!1 &1577131555
 GameObject:

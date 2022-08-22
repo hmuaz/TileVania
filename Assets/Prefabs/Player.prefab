@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5138336297224459405}
   - component: {fileID: 5138336297224459404}
   - component: {fileID: 2022172497}
+  - component: {fileID: 169895813486453031}
   - component: {fileID: 1418844445468205446}
   - component: {fileID: 2022172496}
   m_Layer: 0
@@ -127,13 +128,13 @@ MonoBehaviour:
   speed: 800
   climbingSpeed: 10
   jumpSpeed: 60
-  isJump: 0
   lm: {fileID: 0}
   id: {fileID: 0}
   mv: {fileID: 2022172496}
   ladder: {fileID: 0}
   anim: {fileID: 2022172497}
   rolling: {fileID: 0}
+  shoot: {fileID: 0}
   movementY: 0
   movementX: 0
 --- !u!70 &5138336297224459404
@@ -172,6 +173,22 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &169895813486453031
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5138336297224459402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fbd8aea7aa9dcb48b5a616ea3b5d9fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  arrowSpeed: 2000
+  arrowPrefab: {fileID: 4355603069909788977, guid: 2787329de5c426c449244261de409941, type: 3}
+  arrow: {fileID: 4355603069909788977, guid: 2787329de5c426c449244261de409941, type: 3}
+  arrowClass: {fileID: 0}
 --- !u!114 &1418844445468205446
 MonoBehaviour:
   m_ObjectHideFlags: 0
