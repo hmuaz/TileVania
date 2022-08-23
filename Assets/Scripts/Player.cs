@@ -15,6 +15,8 @@ public class Player : MonoBehaviour
     public Animator anim;
     public Rolling rolling;
     public Shoot shoot;
+    public GameManager gm;
+    public UI ui;
 
 
     float direction;
@@ -22,6 +24,8 @@ public class Player : MonoBehaviour
     public float movementX;
     void Start()
     {
+        ui = GameObject.Find("Skor").GetComponent<UI>();
+        gm = GameObject.Find("LevelManager").GetComponent<GameManager>();
         lm = GameObject.Find("LevelManager").GetComponent<LevelManager>();
         id = GameObject.Find("LevelManager").GetComponent<InputD>();
         rolling = GetComponent<Rolling>();
@@ -32,6 +36,12 @@ public class Player : MonoBehaviour
     
     void Update()
     {
+        if(ui.Lives <= -1)
+        {
+            gm.GameOver();
+        }
+
+
         direction = transform.localScale.x;
         float arrowMovePosition = 0.5f * direction;
         if (Input.GetMouseButtonDown(0))

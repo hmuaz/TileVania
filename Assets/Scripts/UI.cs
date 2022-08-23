@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class UI : MonoBehaviour
 {
     static UI ui;
+    public int Lives = 3;
 
     public int coinInt;
     Text scoreText;

@@ -14,7 +14,10 @@ public class GameManager : MonoBehaviour
     }
     public void GameOver()
     {
+        ui.Lives = 3;
         ui.coinInt = 0;
-        lm.RestartLevel();
+        SceneManager.LoadScene(0);
     }
+
+   
 }

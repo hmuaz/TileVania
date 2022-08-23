@@ -9,6 +9,7 @@ public class Enemy : MonoBehaviour
     Movement movementScript;
     public GameManager gm;
     InputD id;
+    Die dieScript;
 
 
 
@@ -19,11 +20,7 @@ public class Enemy : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player" & id.playerRolling == false)
-        {
-            Debug.Log("temas");
-            gm.GameOver();
-        }
+        
 
         if (collision.gameObject.tag == "EnemyYon")
         {
@@ -49,6 +46,7 @@ public class Enemy : MonoBehaviour
 
     private void Update()
     {
+
     }
 
 
